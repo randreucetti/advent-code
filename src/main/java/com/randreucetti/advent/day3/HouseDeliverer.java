@@ -22,22 +22,21 @@ public class HouseDeliverer {
 
     public void move(char c) {
         index = index % currentHouses.length;
-        Point currentHouse = currentHouses[index];
         switch (c) {
         case '<':
-            currentHouse.x--;
+            currentHouses[index].x--;
             break;
         case '>':
-            currentHouse.x++;
+            currentHouses[index].x++;
             break;
         case '^':
-            currentHouse.y++;
+            currentHouses[index].y++;
             break;
         case 'v':
-            currentHouse.y--;
+            currentHouses[index].y--;
             break;
         }
-        housesVisited.add((Point) currentHouse.clone());
+        housesVisited.add((Point) currentHouses[index].clone());
         index++;
     }
 
