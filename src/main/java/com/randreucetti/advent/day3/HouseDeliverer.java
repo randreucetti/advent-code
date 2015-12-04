@@ -15,7 +15,7 @@ public class HouseDeliverer {
         housesVisited = new HashSet<Point>();
         for (int i = 0; i < currentHouses.length; i++) {
             currentHouses[i] = new Point(0, 0);
-            housesVisited.add(new Point(0, 0));
+            housesVisited.add((Point) currentHouses[i].clone());
         }
         index = 0;
     }
@@ -37,7 +37,7 @@ public class HouseDeliverer {
             currentHouse.y--;
             break;
         }
-        housesVisited.add(new Point(currentHouse.x, currentHouse.y));
+        housesVisited.add((Point) currentHouse.clone());
         index++;
     }
 
